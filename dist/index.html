@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- styles -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Todo-List</h1>
+    </header>
+
+    <div class="container">
+        <div id="left-menu">
+            <nav id="nav">
+                <button class="nav-item">All Taks</button>
+                <button class="nav-item">Today</button>
+                <button class="nav-item">This Week</button>
+                <label class="nav-item" for="Projects">Projects</label>
+                <div id="projects">
+                    <button class="nav-item">Vuduzoo</button>
+                    <button class="nav-item">Birdhouse</button>
+                </div>
+                <button class="nav-item" id="add-project">Add Project</button>
+
+            </nav>
+        </div>
+
+        <div id="main">
+            <div id="info-bar">
+                <span id="sort">
+                    dropdown
+                </span>
+                <button id="add-task">Add Task</button>
+                <span id="list-name">List Name</span>
+                <span id="priority-toggle">Priority toggle</span>
+                <span id="tasks-left">3 tasks left</span>
+            </div>
+
+            <div id="task-container">
+                <div class="task-item">
+                    <button class="completed-task">O</button>
+                    <div class="task">
+                        <span class="priority-label"></span>
+                        <div class="task-content">Task number 1</div>
+                        <div class="task-info">
+                            <span class="task-date">3/12/23</span>
+                            <div class="task-edit-buttons">
+                                <button class="task-edit">edit</button>
+                                <button class="task-delete">X</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="foot"></div>
+    </footer>
+
+
+    <script src="bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 0, 0, 0.21);
+}
+
+
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: calc(100vh - 200px);
+}
+
+#left-menu{
+    background-color: rgb(203, 203, 203);
+    
+}
+
+#nav{
+    display: flex;
+    flex-direction: column;
+}
+
+#info-bar{
+    height: 50px;
+}
+
+#task-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-item{
+    display: flex;
+
+}
+
+.task{
+    display: flex;
+}
+
+.task-info{
+    display: flex;
+}
+
+
+
+
+
+/***********header********/
+header{
+    height: 100px;
+}
+
+/***********foot********/
+.foot{
+    height: 100px;
+}
