@@ -1,11 +1,18 @@
+
+
 *{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
     border: 1px solid rgba(255, 0, 0, 0.21);
+    font-family: "Roboto", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
+header h1{
+    font-family: "Shizuru", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(20px, 4em, 70px);
+    margin: 5px 5px 10px 30px;
+}
 
 .container{
     display: grid;
@@ -14,13 +21,36 @@
 }
 
 #left-menu{
-    background-color: rgb(203, 203, 203);
+    /* background-color: rgb(203, 203, 203); */
     
 }
 
 #nav{
     display: flex;
     flex-direction: column;
+}
+
+.nav-item{
+    padding: 10px;
+    margin-left: 50px;
+}
+
+#nav label{
+    font-family: "Urbanist", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2em;
+    font-weight: 500;
+    margin: 20px 0 0 30px;
+    
+}
+
+#nav button{
+    border: none;
+    background-color: transparent;
+
+    text-align: left;
+    font-family: "Urbanist", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
+    
 }
 
 #info-bar{
