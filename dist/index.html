@@ -27,15 +27,21 @@
                     <button class="nav-item">Vuduzoo</button>
                     <button class="nav-item">Birdhouse</button>
                 </div>
-                <button class="nav-item" id="add-project">Add Project</button>
+                <button class="nav-item" id="add-project"><span>+</span> Add Project</button>
 
             </nav>
         </div>
 
         <div id="main">
             <div id="info-bar">
-                <span id="sort">
-                    dropdown
+                <span id="sort-container">
+                    <label for="sort">Sort by</label>
+                    <select name="sort" id="sort">
+                        <option value="priority-down">Priority &#8595;</option>
+                        <option value="priority-up">Priority &#8593;</option>
+                        <option value="due date">due date</option>
+                        <option value="by project">project</option>
+                    </select>
                 </span>
                 <button id="add-task">Add Task</button>
                 <span id="list-name">List Name</span>

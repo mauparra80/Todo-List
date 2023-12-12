@@ -1,33 +1,49 @@
-
+:root {
+    --color-blue: 157, 185, 205;
+    --color-tan: 255, 248, 214;
+    --color-mustard: 238, 198, 89;
+    --color-green:178, 195, 131;
+    --color-lightBlack: 33, 33, 33;
+}
 
 *{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    border: 1px solid rgba(255, 0, 0, 0.21);
     font-family: "Roboto", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+    background-color: rgb(var(--color-mustard));
+    border-bottom: 5px solid rgb(var(--color-tan))
 }
 
 header h1{
     font-family: "Shizuru", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: clamp(20px, 4em, 70px);
     margin: 5px 5px 10px 30px;
+    color: rgb(37, 37, 37);
 }
 
 .container{
     display: grid;
     grid-template-columns: 1fr 3fr;
     height: calc(100vh - 200px);
+
+    /* border-top: 2px solid rgb(44, 44, 44); */
 }
 
 #left-menu{
-    /* background-color: rgb(203, 203, 203); */
-    
+    background-color: rgb(var(--color-blue));
 }
 
 #nav{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: left;
+
+    margin-top: 20px;
 }
 
 .nav-item{
@@ -43,24 +59,102 @@ header h1{
     
 }
 
+#projects{
+    display: flex;
+    flex-direction: column;
+}
+
+
 #nav button{
     border: none;
     background-color: transparent;
 
     text-align: left;
     font-family: "Urbanist", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.5em;
-    
+    font-size: 1.5rem;
 }
 
-#info-bar{
-    height: 50px;
+#nav button:hover{
+    text-decoration: underline;
 }
+
+button#add-project{
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: rgba(var(--color-tan), 0.5);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    width: 140px;
+    padding: 5px;
+    line-height: 25px;
+}
+
+button#add-project:hover{
+    background-color: rgba(var(--color-tan), 0.8);
+    /* transform: scale(1.1); */
+    border: 2px solid rgb(var(--color-mustard));
+    text-decoration: none;
+}
+
+#add-project span{
+    font-size: 1.5em;
+}
+
+
+/************MainArea***************/
+
+#main{
+    background-color: rgb(var(--color-tan));
+}
+
+/****infoBar****/
+
+#info-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+
+    height: 70px;
+    border-bottom: 1px solid rgb(163, 163, 163);
+    background-color: white;
+
+    font-size: 20px;
+}
+
+#list-name{
+    font-size: 1.5em;
+    font-family: "Concert One";
+    font-weight: 600;
+    color: white;
+    
+        color: #FFFFFF;
+        background: #FFFFFF;
+        text-shadow: 2px 2px 0 #00000072, 2px -2px 0 #00000082, -2px 2px 0 #0000007a, -2px -2px 0 #00000074, 2px 0px 0 #000000, 0px 2px 0 #0000007b, -2px 0px 0 #000000, 0px -2px 0 #000000;
+        color: #FFFFFF;
+        background: #FFFFFF;
+    
+
+    padding: 5px 10px 5px 10px;
+
+    background-color: rgb(var(--color-blue));
+    border-radius: 10px;
+    border: 1px solid rgba(var(--color-lightBlack),.5);
+}
+
+#sort{
+    font-size: .8em;
+    border: 1px solid rgba(var(--color-lightBlack),.3);
+}
+
+/****tasks******/
 
 #task-container{
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    background-color: rgba(var(--color-tan), 0.5);
 }
 
 .task-item{
@@ -88,4 +182,5 @@ header{
 /***********foot********/
 .foot{
     height: 100px;
+    background-color: rgb(var(--color-mustard));
 }
