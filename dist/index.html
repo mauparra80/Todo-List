@@ -5,7 +5,7 @@
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto&family=Shizuru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shizuru&family=Urbanist:wght@300&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="style.css"> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@
                     <button class="nav-item">Vuduzoo</button>
                     <button class="nav-item">Birdhouse</button>
                 </div>
-                <button class="nav-item" id="add-project"><span>+</span> Add Project</button>
+                <button class="nav-item" id="add-project"><span>+ </span>Add Project</button>
 
             </nav>
         </div>
@@ -35,17 +35,21 @@
         <div id="main">
             <div id="info-bar">
                 <span id="sort-container">
-                    <label for="sort">Sort by</label>
+                    <label for="sort">Sort by:</label>
                     <select name="sort" id="sort">
                         <option value="priority-down">Priority &#8595;</option>
                         <option value="priority-up">Priority &#8593;</option>
-                        <option value="due date">due date</option>
-                        <option value="by project">project</option>
+                        <option value="due-date">Due date</option>
+                        <option value="projects">Project</option>
                     </select>
                 </span>
-                <button id="add-task">Add Task</button>
+                <button id="add-task"><span>+ </span>Add Task</button>
                 <span id="list-name">List Name</span>
-                <span id="priority-toggle">Priority toggle</span>
+                <div class="priority-toggle">
+                    <button class="priority-button low-priority" id="low-priority">Low</button>
+                    <button class="priority-button medium-priority" id="medium-priority">Medium</button>
+                    <button class="priority-button high-priority" id="high-priority">High</button>
+                </div>
                 <span id="tasks-left">3 tasks left</span>
             </div>
 
@@ -64,6 +68,41 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="add-task-form hide">
+        <div class="add-task-top">
+            <h4>New Task...</h4>
+            <button class="exit-add-task">&#x2715;</button>
+        </div>
+
+        <div class="add-task-body">
+            <div class="section">
+                <label for="task-description">Task Description</label>
+                <textarea name="task-description" id="task-description" cols="30" rows="3" maxlength="50" placeholder="Learn something new" required></textarea>
+            </div>
+            <div class="section">
+                <label for="task-date">Task Date</label>
+                <input type="date" name="task-date" id="task-date">
+                
+            </div>
+            <div class="section">
+                
+                <div class="priority-choose priority-toggle">
+                    <label for="priority-choose">Priority</label>
+                    <button class="priority-button low-priority" id="choose-low-priority">Low</button>
+                    <button class="priority-button medium-priority" id="choose-medium-priority">Medium</button>
+                    <button class="priority-button high-priority" id="choose-high-priority">High</button>
+                </div>
+            </div>
+            <div class="section">
+                <label for="choose-project">Add to</label>
+                <select name="choose-project" id="choose-project">
+                    <option value="Today">Today</option>
+                    <option value="This Week">This Week</option>
+                </select>
             </div>
         </div>
     </div>

@@ -1,12 +1,26 @@
 import { taskManager } from "./task-manager"
 
-const render = function(){
+console.log("render function running");
+    const taskWindow = document.querySelector(".add-task-form");
 
-    buildNewTask();
+export const render = {
 
+    // buildNewTask();
+    
 
+    //called when "add task" click. opens newTask Window
+    openTask()
+    {
+        taskWindow.classList.remove("hide");
+        return "test";
+    },
 
-    function buildNewTask()
+    closeTask()
+    {
+        taskWindow.classList.add("hide");
+    },
+
+   buildNewTask()
     {
         console.log("appending new task now");
 
@@ -57,7 +71,7 @@ const render = function(){
     }
 
     
-}
+};
 
 
-export default render;
+
