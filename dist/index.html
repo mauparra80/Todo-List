@@ -27,7 +27,16 @@
                     <button class="nav-item">Vuduzoo</button>
                     <button class="nav-item">Birdhouse</button>
                 </div>
-                <button class="nav-item" id="add-project"><span>+ </span>Add Project</button>
+                <div class="nav-item" id="add-project">
+                
+                    Add Project
+                    <div class="project-input">
+                    <input type="text" name="input project" id="input-project" placeholder="Project Name" maxlength="20">
+                    <button id="add-project-btn">+</button>
+                    </div>
+                </div>
+
+                
 
             </nav>
         </div>
@@ -78,6 +87,7 @@
             <button class="exit-add-task">&#x2715;</button>
         </div>
 
+        
         <div class="add-task-body">
             <div class="section">
                 <label for="task-description">Task Description</label>
@@ -87,14 +97,16 @@
                 <label for="task-date">Task Date</label>
                 <input type="date" name="task-date" id="task-date">
                 
+                
             </div>
             <div class="section">
                 
                 <div class="priority-choose priority-toggle">
-                    <label for="priority-choose">Priority</label>
-                    <button class="priority-button low-priority" id="choose-low-priority">Low</button>
-                    <button class="priority-button medium-priority" id="choose-medium-priority">Medium</button>
-                    <button class="priority-button high-priority" id="choose-high-priority">High</button>
+                    <label for="choose-low-priority">Priority</label>
+                    <button class="priority-button low-priority" id="choose-low-priority" data-button="low"
+                    >Low</button>
+                    <button class="priority-button medium-priority" id="choose-medium-priority" data-button="medium">Medium</button>
+                    <button class="priority-button high-priority" id="choose-high-priority" data-button="high">High</button>
                 </div>
             </div>
             <div class="section">
@@ -104,7 +116,10 @@
                     <option value="This Week">This Week</option>
                 </select>
             </div>
+            
+            <button class="section" type="submit" id="submit-newtask">Submit</button>
         </div>
+        
     </div>
 
     <footer>

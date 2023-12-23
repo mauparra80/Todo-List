@@ -1,23 +1,45 @@
 import { taskManager } from "./task-manager"
 
 console.log("render function running");
-    const taskWindow = document.querySelector(".add-task-form");
+const taskWindow = document.querySelector(".add-task-form");
+
+let num = 0;
 
 export const render = {
 
     // buildNewTask();
-    
+   
 
     //called when "add task" click. opens newTask Window
     openTask()
     {
+        console.log(num);
         taskWindow.classList.remove("hide");
-        return "test";
+        num++;
+        console.log(num);
     },
 
     closeTask()
     {
         taskWindow.classList.add("hide");
+    },
+
+    togglePriority(priority)
+    {
+        const toggleBtns = document.querySelectorAll('.priority-choose .priority-button');
+        toggleBtns.forEach((btn) => btn.classList.remove('toggled'));
+        console.log(priority);
+        priority.classList.add('toggled');
+    },
+
+    renderProjects(projects){
+        const projectContainer = document.querySelector("#projects");
+        projects.forEach((projectName) => {
+            const projectButton = document.createElement("button");
+            projectButton.classList.add("nav-item");
+            projectButton.textContent = projectName;
+            projectContainer.appendChild(projectButton);
+        })
     },
 
    buildNewTask()

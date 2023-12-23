@@ -40,6 +40,8 @@ header h1{
     /* display: none; */
 }
 
+/******************Left Menu************************/
+
 #left-menu{
     background-color: rgb(var(--color-blue));
 }
@@ -86,7 +88,7 @@ header h1{
 }
 
 button#add-task,
-button#add-project{
+#add-project{
     font-size: 1.2rem;
     font-weight: 500;
     background-color: rgba(var(--color-tan), 0.5);
@@ -99,16 +101,41 @@ button#add-project{
 }
 
 button#add-task:hover,
-button#add-project:hover{
-    background-color: rgba(var(--color-tan), 0.8);
+#add-project-btn:hover{
+    background-color: rgba(var(--color-tan), 0.8) !important;
     /* transform: scale(1.1); */
-    border: 2px solid rgb(var(--color-mustard));
-    text-decoration: none;
+    outline: 2px solid rgb(var(--color-mustard));
+    text-decoration: none !important;
 }
 
 #add-task span,
 #add-project span{
     font-size: 1.5em;
+}
+
+#input-project{
+    width: 100%;
+    padding: 3px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+
+    font-size: .8em;
+}
+
+.project-input{
+    display: flex;
+}
+
+#add-project-btn {
+    /* border-radius: 20px; */
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 2px solid transparent;
+    padding: 5px;
+    height: 50px;
+    background-color: white !important;
+
 }
 
 
@@ -177,7 +204,7 @@ button#add-project:hover{
     font-weight: 500;
     color: rgb(var(--color-lightBlack));
 
-    border: 1px solid silver;
+    border: 1px solid rgba(38, 38, 38, 0.29);
 }
 .priority-button:active{
     border-color: black;
@@ -283,9 +310,35 @@ button#add-project:hover{
 #task-description{
    padding: 4px;
 }
+#task-description:not(:placeholder-shown){
+    border: 2px solid rgb(31, 176, 31);
+}
+.invalid-input{
+    border: 2px solid rgba(255, 0, 0, 0.514);
+}
 
 .add-task-body .priority-button{
     height: 30px;
+}
+.toggled{
+    border-color: black;
+    transform:scale(120%);
+    filter: brightness(120%);
+}
+
+#submit-newtask{
+    outline: 5px solid rgb(var(--color-green));
+    border: 3px solid transparent;
+    background-color: rgb(240, 240, 240);
+
+
+    font-weight: 500;
+}
+
+#submit-newtask:hover{
+    background-color: rgba(255, 255, 255, 0.778);
+
+    border: 3px solid rgb(var(--color-mustard));
 }
 
 
