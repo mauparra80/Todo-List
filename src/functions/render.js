@@ -40,6 +40,8 @@ export const render = {
             projectButton.textContent = projectName;
             projectContainer.appendChild(projectButton);
         })
+
+        document.querySelector("#input-project").value = "";
     },
 
    buildNewTask()

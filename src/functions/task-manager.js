@@ -9,6 +9,10 @@ class Task
         this.fromProject = fromProject; 
     }
 
+    getProject(){
+        return this.fromProject;
+    }
+
     //deletetask
 };
 
@@ -26,10 +30,17 @@ class taskList
     printTasks(){
         console.log(this.taskList);
     }
+
+    getTasks(){
+        return this.taskList;
+    }
 }
 
 let myTasks = new taskList();
-
+//private var
+let sortProject = "This Week";
+let sortBy;
+let sortPriority;
 
 
 
@@ -44,11 +55,28 @@ export const taskManager =
         const newTask = new Task(inputDescription, inputDate, inputPriority, inputProject);
         myTasks.appendTask(newTask);
         console.log("list of tasks" + myTasks.printTasks());
-       
+        this.filterTasks();
     },
 
     edittask() {
 
+    },
+
+    //change tasks shown based on - project selected, sort, priority toggle
+    filterTasks() {
+        let filteredTasks = [];
+        let unfilteredTasks = [];
+
+        //first make an array based on project selected, then apply sort and final apply toggle so 3 levels
+        unfilteredTasks = myTasks.getTasks()
+        unfilteredTasks.forEach((task) => {
+            if(task.getProject() == sortProject)
+            {
+                filteredTasks.push(task);
+            }
+        })
+
+        console.log("list of filtered tasks " + filteredTasks);
     }
 };
 

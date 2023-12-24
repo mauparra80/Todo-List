@@ -42,7 +42,7 @@ function captureInput()
     inputDescription = document.getElementById('task-description').value;
     inputDate = document.getElementById('task-date').value;
     //input priority already saved
-    inputProject = document.getElementById("choose-project");
+    inputProject = document.getElementById("choose-project").value;
 }
 
 //clear input from form
@@ -83,6 +83,7 @@ export const taskWindow =
                     taskManager.addtask(inputDescription, inputDate, inputPriority, inputProject);
                     render.closeTask();
                     clearInput();
+                    render.buildNewTask();
                 }
         });
 

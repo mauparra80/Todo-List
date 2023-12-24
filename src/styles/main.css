@@ -14,8 +14,18 @@
     font-family: "Roboto", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 body{
     position: relative;
+    width: min(2000px, 100vw);
+
+    
+    box-shadow: 0 0 1000px 300px rgba(0, 0, 0, 0.482)
 }
 
 header{
@@ -236,11 +246,20 @@ button#add-task:hover,
 
 .task-item{
     display: flex;
-
+    
+    
 }
 
 .task{
     display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+    margin: 10px; 
+    border: 1px solid black;
+    border-radius: 10px;
+
+    background-color: white;
 }
 
 .task-info{
