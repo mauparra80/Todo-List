@@ -2,7 +2,7 @@ import { render } from "./render";
 import { taskManager } from "./task-manager";
 
 //global var
-let inputDescription;
+let inputDescription = "tempDescription";
 let inputDate;
 let inputPriority = "low";
 let inputProject;
@@ -77,13 +77,15 @@ export const taskWindow =
         submitBtn?.addEventListener(
             'click', () => {
                 event.preventDefault(); 
-                console.log("submit clicked");
                 if (inputCheck()){
                     captureInput();
+                    
+                    //add task and render to taskManager
                     taskManager.addtask(inputDescription, inputDate, inputPriority, inputProject);
+                    taskManager.filterSortBy(document.querySelector("#sort").value);
                     render.closeTask();
+                    
                     clearInput();
-                    render.buildNewTask();
                 }
         });
 

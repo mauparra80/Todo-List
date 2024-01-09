@@ -7,6 +7,7 @@ const sort = document.querySelector("#sort");
 const listName = document.querySelector("#list-name");
 const priorityToggle = document.querySelector(".priority-toggle");
 const tasksLeft = document.querySelector(".tasks-left");
+const sortByBtn = document.querySelector("#sort");
 
 
 export const infoBar = {
@@ -24,16 +25,26 @@ export const infoBar = {
             console.log("sort changed")
         });
 
-        //update sort array render list and buttons
-        priorityToggle.addEventListener('click', () => {
-            console.log("priority changed");
+        //set toggle state, update render, sort toggle state
+        priorityToggle.addEventListener('click', (e) => {
+            taskManager.priorityToggle(e.target);
+            taskManager.filterSortBy(sortByBtn.value);
+            render.toggleInfoBarPriority();
         });
+
+        //update filterSortby
+        sortByBtn.addEventListener('click', () => {
+            taskManager.filterSortBy(sortByBtn.value);
+            
+        })
     },
     
+    updateTasksLeft(total){
+        let tasksLeft = total + " tasks left";
+        document.querySelector("#tasks-left").textContent = tasksLeft;
+    }
 
     //add task button listener
-   
-
 };
 
 
