@@ -1,14 +1,16 @@
 import { render } from "./render";
 import { infoBar } from "./info-bar";
+import { storageManager } from "./storageManager";
 
 class Task 
 {
-    constructor(description, date, priority, fromProject){
+    constructor(description, date, priority, fromProject, completed){
         this.description = description; //main task content
         this.date = date;   //end date
         this.priority = priority;   //low, med, high
         this.fromProject = fromProject; 
-        this.completed = false;
+        if(completed){this.completed = completed}
+        else{this.completed = false;}
     }
 
     getPriority(){
@@ -86,6 +88,12 @@ class TaskList
         return total;
     }
 
+    fillStoredTasks(storedTasks){
+        this.taskList = []; //reset tasklist
+        this.taskList = storedTasks; //fill with stored
+        taskManager.filterSortBy(); //render tasks
+    }
+
 }
 
 //havent sorted in a while. lets just bubble sort by date number
@@ -107,6 +115,11 @@ function sortbyDate(myArray){
     return myArray;
 }
 
+function savetoStorage(){
+    console.log("these are the tasks we are saving when we add task");
+    storageManager.addTasktoStorage(myTasks.getTasks());
+}
+
 let myTasks = new TaskList();
 let renderedTasks = new TaskList();
 
@@ -122,8 +135,29 @@ let sortPriority = "";
 
 export const taskManager =
 {
+    //on startup choose all tasks, update tasksleft
     init() {
+        this.filterProject("All Tasks");
+        infoBar.updateTasksLeft(myTasks.getCompletedTasks());
+    },
 
+    initiateTaskList(storedTaskList){
+        //extract data from stored to create array of task objects
+
+        storedTaskList.forEach((task) => {
+            console.log(`this is the task we are loading from storage ${task}`);
+            console.log(task);
+            console.log(task.date);
+            let inputDescription = task.description;
+            let inputDate = task.date;
+            let inputPriority = task.priority;
+            let inputProject = task.fromProject;
+
+            const newTask = new Task(inputDescription, inputDate, inputPriority, inputProject);
+            myTasks.appendTask(newTask);
+        })
+
+        
     },
 
     deleteTask(taskDescription){
@@ -155,10 +189,13 @@ export const taskManager =
 
     //create new task, add it to the array, render tasklist
     addtask(inputDescription, inputDate, inputPriority, inputProject) {
+
         const newTask = new Task(inputDescription, inputDate, inputPriority, inputProject);
         myTasks.appendTask(newTask);
-
         this.filterProject(myTasks.sortProject);
+
+        //save tasks
+        savetoStorage();
     },
 
     edittask() {

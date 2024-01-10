@@ -5,6 +5,7 @@ import { infoBar } from './functions/info-bar';
 import { taskWindow } from './functions/task-window';
 import { leftMenu } from './functions/left-menu'
 import { task } from './functions/task';
+import { storageManager } from './functions/storageManager';
 
 
 console.log("working fine");
@@ -18,4 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     leftMenu.init();
     render.init();
     task.init();
+    storageManager.init();
+    taskManager.init();
 })
